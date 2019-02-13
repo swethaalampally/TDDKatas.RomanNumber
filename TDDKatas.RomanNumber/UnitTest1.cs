@@ -7,11 +7,12 @@ namespace TDDKatas.RomanNumber
     public class UnitTest1
     {
         [Theory]
-        [InlineData(1)]
-        public void Test1(int number)
+        [InlineData(1,"I")]
+        [InlineData(2,"II")]
+        public void Test1(int number,string expectedRomanNumber)
         {
             var actual = RomanConvertor.Convert(number);
-            Assert.Equal("I",actual);
+            Assert.Equal(expectedRomanNumber, actual);
         }
     }
 
@@ -19,7 +20,7 @@ namespace TDDKatas.RomanNumber
     {
         public static string Convert(int number)
         {
-            throw new NotImplementedException();
+            return (number==1)?"I":"II";
         }
     }
 }
